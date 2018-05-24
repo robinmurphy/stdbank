@@ -1,2 +1,2 @@
-/mnt/8039d410-b025-44e2-95e5-08fa4509452a/home/stdBank-WS/automation/vending/src/test/java/com/sbg/automation/vending/VendingApplicationTests.java
-/mnt/8039d410-b025-44e2-95e5-08fa4509452a/home/stdBank-WS/automation/vending/src/test/java/com/sbg/automation/vending/payment/PaymentProcessorTest.java
+/mnt/8039d410-b025-44e2-95e5-08fa4509452a/home/stdBank-WS/automation/src/test/java/com/sbg/automation/vending/payment/PaymentProcessorTest.java
+/mnt/8039d410-b025-44e2-95e5-08fa4509452a/home/stdBank-WS/automation/src/test/java/com/sbg/automation/vending/VendingApplicationTests.java

@@ -60,4 +60,11 @@
 	</build>
 
 
+	<scm>
+		<connection>scm:git:git@github.com:robinmurphy/stdbank.git</connection>
+		<url>scm:git:git@github.com:robinmurphy/stdbank.git</url>
+		<developerConnection>scm:git:git@github.com:robinmurphy/stdbank.git</developerConnection>
+	</scm>
+
+
 </project>
