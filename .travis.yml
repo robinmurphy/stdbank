@@ -18,8 +18,11 @@ cache:
   - "$HOME/.cache"
 
 install:
-  - apt update
   - true
+
+addons:
+  apt:
+    update: true
 
 script:
   - ./mvnw clean install
