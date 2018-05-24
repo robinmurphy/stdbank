@@ -20,6 +20,10 @@ cache:
 install:
   - sudo apt-get update
 
+addons:
+  apt:
+    update: true
+
 script:
   - ./mvnw clean install
 
