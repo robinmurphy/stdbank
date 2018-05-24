@@ -1,0 +1,14 @@
+com/sbg/automation/vending/payment/Coins.class
+com/sbg/automation/vending/VendingApplication.class
+com/sbg/automation/vending/jpa/entity/VendingSales.class
+com/sbg/automation/vending/service/VendingImpl.class
+com/sbg/automation/vending/service/Vending.class
+com/sbg/automation/vending/payment/Notes.class
+com/sbg/automation/vending/dto/ProductDto.class
+com/sbg/automation/vending/payment/Currency.class
+com/sbg/automation/vending/dto/VendingBasket.class
+com/sbg/automation/vending/jpa/repo/VendingSalesRepo.class
+com/sbg/automation/vending/jpa/repo/ProductRepo.class
+com/sbg/automation/vending/jpa/entity/Product.class
+com/sbg/automation/vending/rest/VendingRestEndpoints.class
+com/sbg/automation/vending/payment/PaymentProcessor.class
