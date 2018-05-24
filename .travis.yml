@@ -8,6 +8,10 @@ jdk:
   - oraclejdk9
   - openjdk8
 
+cache:
+  directories:
+  - "$HOME/.cache"
+
 install: true
 
 script:
