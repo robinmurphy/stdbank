@@ -79,7 +79,7 @@ public class PaymentProcessorTest {
 
         Product product1 = new Product();
         product1.setDescription("test2");
-        product1.setItemValue(new Double(0));
+        product1.setItemValue(new Double(10));
         product1.setProductKey("test2");
         product1.setQuantity(10);
         productList.add(product1);
