@@ -11,5 +11,7 @@ jdk:
 install: true
 
 script:
-  - bash <(curl -s https://codecov.io/bash)
   - ./mvnw clean install
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
