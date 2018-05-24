@@ -8,7 +8,10 @@ public class PaymentProcessor {
 
     Double calculateTotal(VendingBasket basket){
 
-        return basket.getProducts().stream().filter(o -> o.getItemValue() != null).mapToDouble(o -> o.getItemValue()).sum();
+        return basket.getProducts()
+                .stream()
+                .filter(o -> o.getItemValue() != null )
+                .mapToDouble(o -> o.getItemValue()).sum();
     }
 
     Double calculateChange(Double basketvalue, Double amountPaid){
