@@ -10,7 +10,6 @@ services:
   - docker
 
 before_install:
-  - apt update
   - docker pull tutum/mongodb
   - docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no tutum/mongodb
 
@@ -18,7 +17,9 @@ cache:
   directories:
   - "$HOME/.cache"
 
-install: true
+install:
+  - apt update
+  - true
 
 script:
   - ./mvnw clean install
