@@ -11,6 +11,7 @@ public class VendingApplicationTests {
 
 //	@Test
 	public void contextLoads() {
+
 	}
 
 }
