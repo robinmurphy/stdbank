@@ -61,7 +61,7 @@ public class PaymentProcessorTest {
 
         Double total = paymentProcessor.calculateTotal(vendingBasket);
 
-        assertEquals(" amount expected", new Double(30), total);
+        assertEquals(" amount expected", new Double(40), total);
 
     }
 
@@ -72,7 +72,7 @@ public class PaymentProcessorTest {
 
         Product product = new Product();
         product.setDescription("test1");
-        product.setItemValue(new Double(0));
+        product.setItemValue(new Double(10));
         product.setProductKey("test1");
         product.setQuantity(0);
         productList.add(product);
