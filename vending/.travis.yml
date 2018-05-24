@@ -10,4 +10,4 @@ install: true
 
 script:
   - bash <(curl -s https://codecov.io/bash)
-  - ./mnvw clean install
+  - ./mvnw clean install
