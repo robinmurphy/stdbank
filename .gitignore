@@ -1,0 +1,25 @@
+# Compiled source #
+###################
+*.class
+
+# Packages #
+############
+*.gz
+*.jar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.txt
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+**/target/**
+!.mvn/wrapper/maven-wrapper.jar
+
