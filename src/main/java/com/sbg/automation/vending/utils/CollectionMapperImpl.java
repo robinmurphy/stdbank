@@ -3,10 +3,12 @@ package com.sbg.automation.vending.utils;
 import org.dozer.DozerBeanMapper;
 import org.dozer.MappingException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class CollectionMapperImpl implements CollectionMapper {
 
     @Autowired
