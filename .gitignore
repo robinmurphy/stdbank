@@ -1,7 +1,3 @@
-# Compiled source #
-###################
-*.class
-
 # Packages #
 ############
 *.gz

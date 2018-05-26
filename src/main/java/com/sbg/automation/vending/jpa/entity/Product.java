@@ -21,6 +21,16 @@ public class Product {
     @Column(name = "QUANTITY")
     private int quantity;
 
+    public Product(String productKey, String description, Double itemValue, int quantity) {
+        this.productKey = productKey;
+        this.description = description;
+        this.itemValue = itemValue;
+        this.quantity = quantity;
+    }
+
+    public Product() {
+    }
+
     public String getProductKey() {
         return productKey;
     }

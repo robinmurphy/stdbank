@@ -1,6 +1,6 @@
 package com.sbg.automation.vending.payment;
 
-import com.sbg.automation.vending.dto.VendingBasket;
+import com.sbg.automation.vending.dto.VendingBasketDto;
 import com.sbg.automation.vending.jpa.entity.Product;
 import com.sbg.automation.vending.jpa.repo.ProductRepo;
 import org.junit.Before;
@@ -40,7 +40,7 @@ public class PaymentProcessorTest {
     @Autowired
     PaymentProcessor paymentProcessor;
 
-    VendingBasket vendingBasket;
+    VendingBasketDto vendingBasket;
 
     @MockBean
     ProductRepo productRepo;
@@ -55,7 +55,7 @@ public class PaymentProcessorTest {
 
         when(productRepo.findAll()).thenReturn(createProductList());
 
-        vendingBasket = new VendingBasket();
+        vendingBasket = new VendingBasketDto();
         vendingBasket.setOrderId(1L);
         vendingBasket.setProducts(productRepo.findAll());
 

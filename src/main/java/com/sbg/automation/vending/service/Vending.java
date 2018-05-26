@@ -1,13 +1,16 @@
 package com.sbg.automation.vending.service;
 
-import com.sbg.automation.vending.dto.VendingBasket;
+import com.sbg.automation.vending.dto.TakeAwayBasketDto;
+import com.sbg.automation.vending.dto.VendingBasketDto;
 import com.sbg.automation.vending.jpa.entity.Product;
 
-
+import java.util.List;
 
 public interface Vending {
 
-    VendingBasket updateBasket(Product product, Long OrderId);
+    VendingBasketDto updateBasket(VendingBasketDto basket);
 
-    Double makePayment(Double amountPaid, VendingBasket basket);
+    TakeAwayBasketDto makePayment(Double amountPaid, VendingBasketDto basket);
+
+    List<Product> getStockList();
 }

@@ -1,12 +1,12 @@
 package com.sbg.automation.vending.payment;
 
-import com.sbg.automation.vending.dto.VendingBasket;
+import com.sbg.automation.vending.dto.VendingBasketDto;
 
 import java.util.Map;
 
 public class PaymentProcessor {
 
-    Double calculateTotal(VendingBasket basket){
+    Double calculateTotal(VendingBasketDto basket){
 
         return basket.getProducts()
                 .stream()
