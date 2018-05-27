@@ -1,14 +1,13 @@
 package com.sbg.automation.vending.dto;
 
-import com.sbg.automation.vending.payment.Currency;
-
 import java.util.Map;
 
 public class TakeAwayBasketDto {
 
     private VendingBasketDto basket;
-    private Map<Currency, Double> changeConfiguration;
+    private Map<String, Double> changeConfiguration;
     private Double change;
+    private Double basketTotal;
 
     public VendingBasketDto getBasket() {
         return basket;
@@ -22,15 +21,23 @@ public class TakeAwayBasketDto {
         return changeConfiguration;
     }
 
-    public void setChangeConfiguration(Map changeConfiguration) {
-        this.changeConfiguration = changeConfiguration;
-    }
-
     public Double getChange() {
         return change;
     }
 
     public void setChange(Double change) {
         this.change = change;
+    }
+
+    public void setChangeConfiguration(Map<String, Double> changeConfiguration) {
+        this.changeConfiguration = changeConfiguration;
+    }
+
+    public Double getBasketTotal() {
+        return basketTotal;
+    }
+
+    public void setBasketTotal(Double basketTotal) {
+        this.basketTotal = basketTotal;
     }
 }

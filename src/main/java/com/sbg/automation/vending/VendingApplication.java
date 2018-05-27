@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-@ComponentScan
+@ComponentScan("com.sbg")
 public class VendingApplication {
 
     public static void main(String[] args) {

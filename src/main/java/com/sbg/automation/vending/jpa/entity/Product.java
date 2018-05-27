@@ -3,25 +3,31 @@ package com.sbg.automation.vending.jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "PRODUCTS", schema = "SBG")
 public class Product {
 
     @Id
     @Column(name = "PRODUCT_KEY")
-    private String productKey;
 
-    @Column(name = "DESCRIPTION", length = 20)
+    private Long productKey;
+
+    @Column(name = "DESCRIPTION", length = 100)
     private String description;
 
-    @Column(name = "ITEM_VALUE")
+    @Column(name = "ITEM_PRICE")
     private Double itemValue;
 
     @Column(name = "QUANTITY")
     private int quantity;
 
-    public Product(String productKey, String description, Double itemValue, int quantity) {
+    public Product(Long productKey, String description, Double itemValue, int quantity) {
         this.productKey = productKey;
         this.description = description;
         this.itemValue = itemValue;
@@ -31,11 +37,11 @@ public class Product {
     public Product() {
     }
 
-    public String getProductKey() {
+    public Long getProductKey() {
         return productKey;
     }
 
-    public void setProductKey(String productKey) {
+    public void setProductKey(Long productKey) {
         this.productKey = productKey;
     }
 

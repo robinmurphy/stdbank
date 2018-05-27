@@ -13,4 +13,6 @@ public interface Vending {
     TakeAwayBasketDto makePayment(Double amountPaid, VendingBasketDto basket);
 
     List<Product> getStockList();
+
+    Double showBasketTotal(VendingBasketDto basket);
 }
