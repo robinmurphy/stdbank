@@ -27,18 +27,18 @@ public class SpringUnitTestConfiguration {
         DozerBeanMapper mapper = new DozerBeanMapper(mappingFiles);
         return mapper;
     }
-
-    @Bean
-    @Autowired
-    public javax.sql.DataSource dataSource() {
-        DriverManagerDataSource ds = new DriverManagerDataSource("jdbc:hsqldb:mem:reporting;sql.syntax_db2=true;hsqldb.sqllog=4");
-        ds.setDriverClassName("org.hsqldb.jdbc.JDBCDriver");
-        return ds;
-    }
-
-    @Bean
-    public JdbcTemplate getJdbcTemplate() {
-        return new JdbcTemplate(dataSource());
-    }
+//
+//    @Bean
+//    @Autowired
+//    public javax.sql.DataSource dataSource() {
+//        DriverManagerDataSource ds = new DriverManagerDataSource("jdbc:hsqldb:mem:reporting;sql.syntax_db2=true;hsqldb.sqllog=4");
+//        ds.setDriverClassName("org.hsqldb.jdbc.JDBCDriver");
+//        return ds;
+//    }
+//
+//    @Bean
+//    public JdbcTemplate getJdbcTemplate() {
+//        return new JdbcTemplate(dataSource());
+//    }
 
 }
