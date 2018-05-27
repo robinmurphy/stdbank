@@ -28,9 +28,9 @@ public class VendingImpl implements Vending {
     PaymentProcessor paymentProcessor;
 
     @Override
-    public VendingBasketDto updateBasket(VendingBasketDto basket) {
+    public Double updateBasket(VendingBasketDto basket) {
 
-        return null;
+        return  PaymentProcessor.calculateTotal(basket);
     }
 
     @Override

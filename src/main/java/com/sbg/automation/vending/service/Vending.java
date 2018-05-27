@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface Vending {
 
-    VendingBasketDto updateBasket(VendingBasketDto basket);
+    Double updateBasket(VendingBasketDto basket);
 
     TakeAwayBasketDto makePayment(Double amountPaid, VendingBasketDto basket);
 

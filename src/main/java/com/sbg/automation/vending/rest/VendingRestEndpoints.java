@@ -42,7 +42,7 @@ public class VendingRestEndpoints {
     @ResponseBody
     public Double updateBasket(@RequestBody VendingBasketDto basket) {
 
-        return PaymentProcessor.calculateTotal(vending.updateBasket(basket));
+        return vending.updateBasket(basket);
     }
 
     @ApiOperation(value = "checkout & pay for basket")
