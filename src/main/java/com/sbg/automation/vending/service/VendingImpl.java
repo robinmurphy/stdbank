@@ -35,9 +35,9 @@ public class VendingImpl implements Vending {
         basket.setOrderId(orderId);
         TakeAwayBasketDto takeAwayBasket = new TakeAwayBasketDto();
         takeAwayBasket.setBasket(basket);
-        takeAwayBasket.setBasketTotal( PaymentProcessor.calculateTotal(basket));
+        takeAwayBasket.setBasketTotal(PaymentProcessor.calculateTotal(basket));
 
-        return takeAwayBasket ;
+        return takeAwayBasket;
     }
 
     @Override

@@ -1,1 +1,1 @@
-create schema SBG;
+CREATE SCHEMA SBG;

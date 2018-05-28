@@ -22,12 +22,28 @@ import java.util.List;
 public class ServiceConfiguration {
 
     @Bean
+    public static BeanFactoryPostProcessor schemaDependencyProcessor() {
+        return new BeanFactoryPostProcessor() {
+
+            @Override
+            public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+                BeanDefinition beanDef = beanFactory.getBeanDefinition("liquibase");
+                List<String> deps = new ArrayList<String>();
+                if (beanDef.getDependsOn() != null) {
+                    deps = Arrays.asList(beanDef.getDependsOn());
+                }
+                deps.add("schemaCreator");
+                beanDef.setDependsOn(deps.toArray(new String[deps.size()]));
+            }
+        };
+    }
+
+    @Bean
     public DozerBeanMapper dozerMapper() {
         List<String> mappingFiles = Arrays.asList(new String[]{"dozer_mappings.xml"});
         DozerBeanMapper mapper = new DozerBeanMapper(mappingFiles);
         return mapper;
     }
-
 
     @Bean(name = "liquibase")
     public SpringLiquibase liquibase(javax.sql.DataSource dataSource) {
@@ -45,23 +61,6 @@ public class ServiceConfiguration {
             return new SchemaCreator(dataSource, liquibaseProperties.getDefaultSchema());
         }
         return null;
-    }
-
-    @Bean
-    public static BeanFactoryPostProcessor schemaDependencyProcessor() {
-        return new BeanFactoryPostProcessor() {
-
-            @Override
-            public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-                BeanDefinition beanDef = beanFactory.getBeanDefinition("liquibase");
-                List<String> deps = new ArrayList<String>();
-                if (beanDef.getDependsOn() != null) {
-                    deps = Arrays.asList(beanDef.getDependsOn());
-                }
-                deps.add("schemaCreator");
-                beanDef.setDependsOn(deps.toArray(new String[deps.size()]));
-            }
-        };
     }
 
 }

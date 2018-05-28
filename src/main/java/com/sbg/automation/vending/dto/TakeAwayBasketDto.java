@@ -21,16 +21,16 @@ public class TakeAwayBasketDto {
         return changeConfiguration;
     }
 
+    public void setChangeConfiguration(Map<String, Double> changeConfiguration) {
+        this.changeConfiguration = changeConfiguration;
+    }
+
     public Double getChange() {
         return change;
     }
 
     public void setChange(Double change) {
         this.change = change;
-    }
-
-    public void setChangeConfiguration(Map<String, Double> changeConfiguration) {
-        this.changeConfiguration = changeConfiguration;
     }
 
     public Double getBasketTotal() {

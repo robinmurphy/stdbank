@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <!--<changeSet author="robin" id="schema-hsqldb" context="DEV">-->
-        <!--<sqlFile relativeToChangelogFile="true" encoding="utf8" path="db-changelog-liquibase-schema-hsqldb.sql"/>-->
-    <!--</changeSet>-->
     <changeSet author="robin" id="jpahsqldb" context="DEV">
         <sqlFile relativeToChangelogFile="true" encoding="utf8" path="db-changelog-liquibase-jpa-hsqldb.sql"/>
     </changeSet>
 
     <changeSet id="dataload" author="robin">
-        <loadData file="../data_load/productdata.csv" tableName="PRODUCTS" schemaName="SBG" relativeToChangelogFile="true">
+        <loadData file="../data_load/productdata.csv" tableName="PRODUCTS" schemaName="SBG"
+                  relativeToChangelogFile="true">
             <column name="PRODUCT_KEY" type="NUMERIC"/>
             <column name="DESCRIPTION" type="STRING"/>
             <column name="ITEM_PRICE" type="NUMERIC"/>

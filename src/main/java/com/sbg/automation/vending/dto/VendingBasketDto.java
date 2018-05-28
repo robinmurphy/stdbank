@@ -2,7 +2,6 @@ package com.sbg.automation.vending.dto;
 
 import com.sbg.automation.vending.jpa.entity.Product;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class VendingBasketDto {

@@ -10,6 +10,16 @@ import java.util.Date;
 @Table(name = "VENDING_SALES", schema = "SBG")
 public class VendingSales {
 
+    @Id
+    @Column(name = "ORDER_ID")
+    private Long orderId;
+    @Column(name = "DATE_OF_SALE")
+    private Date dateOfSale;
+    @Column(name = "TOTAL_VALUE")
+    private Double totalValue;
+    @Column(name = "NUMBER_OF_ITEMS")
+    private int numberOfItems;
+
     public VendingSales(Date dateOfSale, Double totalValue, int numberOfItems) {
         this.dateOfSale = dateOfSale;
         this.totalValue = totalValue;
@@ -18,19 +28,6 @@ public class VendingSales {
 
     public VendingSales() {
     }
-
-    @Id
-    @Column(name = "ORDER_ID")
-    private Long orderId;
-
-    @Column(name = "DATE_OF_SALE")
-    private Date dateOfSale;
-
-    @Column(name = "TOTAL_VALUE")
-    private Double totalValue;
-
-    @Column(name = "NUMBER_OF_ITEMS")
-    private int numberOfItems;
 
     public Long getOrderId() {
         return orderId;
