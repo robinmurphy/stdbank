@@ -39,5 +39,5 @@ jobs:
       script: echo "Deploying to GitHub releases ..."
       deploy:
         provider: releases
-        api_key: 156b800208be1fe6974cd0f6104d9a505f03c9ac
+        api_key: 80dfb66e5dfe68e0383dbdb1cfb5014ee78cf27c
         skip_cleanup: true
