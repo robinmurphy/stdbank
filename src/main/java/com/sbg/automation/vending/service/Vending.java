@@ -14,5 +14,4 @@ public interface Vending {
 
     List<Product> getStockList();
 
-    Double showBasketTotal(VendingBasketDto basket);
 }

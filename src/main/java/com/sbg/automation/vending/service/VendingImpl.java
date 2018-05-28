@@ -4,6 +4,7 @@ import com.sbg.automation.vending.dto.TakeAwayBasketDto;
 import com.sbg.automation.vending.dto.VendingBasketDto;
 import com.sbg.automation.vending.jpa.entity.Product;
 import com.sbg.automation.vending.jpa.entity.VendingSales;
+import com.sbg.automation.vending.jpa.repo.DbUtil;
 import com.sbg.automation.vending.jpa.repo.ProductRepo;
 import com.sbg.automation.vending.jpa.repo.VendingSalesRepo;
 import com.sbg.automation.vending.payment.PaymentProcessor;
@@ -23,15 +24,15 @@ public class VendingImpl implements Vending {
     ProductRepo productRepo;
     @Autowired
     VendingSalesRepo vendingSalesRepo;
-
+    @Autowired
+    DbUtil dbUtil;
     @Autowired
     PaymentProcessor paymentProcessor;
 
     @Override
     public TakeAwayBasketDto initializeBasket(VendingBasketDto basket) {
 
-        //TODO: get the sequence number for id
-        Long orderId = 1L;
+        Long orderId = dbUtil.getSequenceNextVal();
         basket.setOrderId(orderId);
         TakeAwayBasketDto takeAwayBasket = new TakeAwayBasketDto();
         takeAwayBasket.setBasket(basket);
@@ -55,8 +56,4 @@ public class VendingImpl implements Vending {
         return productRepo.findAll();
     }
 
-    @Override
-    public Double showBasketTotal(VendingBasketDto basket) {
-        return PaymentProcessor.calculateTotal(basket);
-    }
 }

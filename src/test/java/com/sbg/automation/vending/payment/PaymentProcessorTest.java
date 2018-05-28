@@ -28,6 +28,20 @@ import static org.springframework.test.util.AssertionErrors.assertTrue;
 public class PaymentProcessorTest {
 
 
+
+    public static class Config {
+
+        @Bean
+        public PaymentProcessor createPaymentProcessor() {
+            return new PaymentProcessor();
+        }
+
+        @Bean
+        public ProductRepo createProductRepo() {
+            return Mockito.mock(ProductRepo.class);
+        }
+    }
+
     @Autowired
     PaymentProcessor paymentProcessor;
     VendingBasketDto vendingBasket;
@@ -108,16 +122,4 @@ public class PaymentProcessorTest {
         return productList;
     }
 
-    public static class Config {
-
-        @Bean
-        public PaymentProcessor createPaymentProcessor() {
-            return new PaymentProcessor();
-        }
-
-        @Bean
-        public ProductRepo createProductRepo() {
-            return Mockito.mock(ProductRepo.class);
-        }
-    }
 }

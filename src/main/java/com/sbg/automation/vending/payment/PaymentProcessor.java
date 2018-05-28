@@ -14,16 +14,8 @@ import java.util.Map;
 @Service
 public class PaymentProcessor {
 
-    private static final Double ZERO = new Double(0.00);
+    private static final Double ZERO = new Double(0);
     private List<Double> configurations;
-
-    public static Double calculateTotal(VendingBasketDto basket) {
-
-        return basket.getProducts()
-                .stream()
-                .filter(o -> o.getItemValue() != null)
-                .mapToDouble(o -> o.getItemValue()).sum();
-    }
 
     @PostConstruct
     public void load() {
@@ -38,6 +30,14 @@ public class PaymentProcessor {
         configurations.add(new Double(0.5));
         configurations.add(new Double(0.2));
         configurations.add(new Double(0.1));
+    }
+
+    public static Double calculateTotal(VendingBasketDto basket) {
+
+        return basket.getProducts()
+                .stream()
+                .filter(o -> o.getItemValue() != null)
+                .mapToDouble(o -> o.getItemValue()).sum();
     }
 
     public TakeAwayBasketDto calculateBasketTotals(VendingBasketDto basket, Double amountPaid) {
