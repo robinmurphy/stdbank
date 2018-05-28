@@ -4,7 +4,6 @@ import com.sbg.automation.vending.SpringUnitTestConfiguration;
 import com.sbg.automation.vending.dto.ProductDto;
 import com.sbg.automation.vending.jpa.repo.ProductRepo;
 import com.sbg.automation.vending.service.VendingImpl;
-import com.sbg.automation.vending.utils.VendingObjectCreator;
 import org.junit.Before;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.mockito.Mockito.when;
 
 
 //@RunWith(SpringJUnit4ClassRunner.class)
@@ -46,8 +43,6 @@ public class VendingRestEndpointsTest {
 
         TestRestTemplate testRestTemplate = new TestRestTemplate();
 
-        when(vending.getStockList()).thenReturn(VendingObjectCreator.createProductList());
-        when(productRepo.findAll()).thenReturn(VendingObjectCreator.createProductList());
 
         List<ProductDto> response = testRestTemplate.getForObject("http://localhost:8081/vending/loadstock", ArrayList.class);
 //        String response = testRestTemplate.getForObject("http://127.0.0.1:9000/loadstock", String.class);
