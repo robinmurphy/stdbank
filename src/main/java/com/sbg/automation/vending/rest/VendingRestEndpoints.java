@@ -34,15 +34,15 @@ public class VendingRestEndpoints {
     @Autowired
     CollectionMapper beanMapper;
 
-    @ApiOperation(value = "Update the basket")
+    @ApiOperation(value = "Initialize the basket")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "The request was processed successfully", response = VendingBasketDto.class),
             @ApiResponse(code = 400, message = "Parameters supplied were either missing or invalid")})
     @PostMapping(path = "/vending/updatebasket", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Double updateBasket(@RequestBody VendingBasketDto basket) {
+    public TakeAwayBasketDto initializeBasket(@RequestBody VendingBasketDto basket) {
 
-        return vending.updateBasket(basket);
+        return vending.initializeBasket(basket);
     }
 
     @ApiOperation(value = "checkout & pay for basket")

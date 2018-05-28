@@ -28,9 +28,16 @@ public class VendingImpl implements Vending {
     PaymentProcessor paymentProcessor;
 
     @Override
-    public Double updateBasket(VendingBasketDto basket) {
+    public TakeAwayBasketDto initializeBasket(VendingBasketDto basket) {
 
-        return  PaymentProcessor.calculateTotal(basket);
+        //TODO: get the sequence number for id
+        Long orderId = 1L;
+        basket.setOrderId(orderId);
+        TakeAwayBasketDto takeAwayBasket = new TakeAwayBasketDto();
+        takeAwayBasket.setBasket(basket);
+        takeAwayBasket.setBasketTotal( PaymentProcessor.calculateTotal(basket));
+
+        return takeAwayBasket ;
     }
 
     @Override

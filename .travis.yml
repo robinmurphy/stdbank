@@ -41,5 +41,3 @@ jobs:
         provider: releases
         api_key: b5236613a445b25369556681d113446cc5728ef6
         skip_cleanup: true
-        on:
-          tags: true
