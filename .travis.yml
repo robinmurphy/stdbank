@@ -24,7 +24,7 @@ jobs:
         provider: heroku
         skip_cleanup: true
         api_key:
-          secure: B5mF7TZmf4jxq95+hJBkLgm8eOE30Cz1o6/tgYaEkCzGcRVAqSoIW/fbSdW78IBfryNL9yggaBjPhMPck1ed5axk1EIT+gLXkfif7KjsHUGOebp9reKHCow0A1qzcW69r/e+UAiSDL8pUYo6VPbgVlCZU7pMGE++6VjmV7gFsBoyAlC/eMcjrPnVgHSr0tW1O96XrlwvTwXiF4iKLkZqgCI5uXOTcJJIkLr0fAd/GeEpt0hm9Q1YgqSWwPLHGcdTgaC2kG/BYklgl9e/VN60LqQTLn403uyqZIIijHYsASH20nDRYNN86vr+4DQ7K0Mq250y+WJ32YtMtMGg99r7fsFFY9g6jZIPtLMT2bDQVtszvJddjyoIUsRPunUoK1/QSupf5mO57TgO2xlwI09R6VA+maUndLYgC+9S5X5hUsp5OWqdNHHyFFrk76xIe4MXVS6/OBNhrGqAw9l6GO+hks0kK0rWsJDkckQ+pfTxgXw0bRH2WdS2epBEM2xORQfAcj+yB1TnQ9C9At1N9mmF2xd0w6s28UN166S0fCf3e57ike/5RbCB8mrpHBrPSdkrWG5fCW07QUqSWCrHiaEVyRfnp5gqfKg2k6E9xD/CnBDwDS3EX6F92qZMDmBkKVxBBN9zhbXuSwhekHivI/wi5OnCh431szv9HNt0GhpUFzw=
+          secure: 08280c00-52b9-4619-ba31-096fe85137ba
         app: stdbank
         script:  'curl http://stdbank.herokuapp.com/vending/loadstock'
     - stage: deploy to production
@@ -32,7 +32,7 @@ jobs:
         provider: heroku
         skip_cleanup: true
         api_key:
-          secure: B5mF7TZmf4jxq95+hJBkLgm8eOE30Cz1o6/tgYaEkCzGcRVAqSoIW/fbSdW78IBfryNL9yggaBjPhMPck1ed5axk1EIT+gLXkfif7KjsHUGOebp9reKHCow0A1qzcW69r/e+UAiSDL8pUYo6VPbgVlCZU7pMGE++6VjmV7gFsBoyAlC/eMcjrPnVgHSr0tW1O96XrlwvTwXiF4iKLkZqgCI5uXOTcJJIkLr0fAd/GeEpt0hm9Q1YgqSWwPLHGcdTgaC2kG/BYklgl9e/VN60LqQTLn403uyqZIIijHYsASH20nDRYNN86vr+4DQ7K0Mq250y+WJ32YtMtMGg99r7fsFFY9g6jZIPtLMT2bDQVtszvJddjyoIUsRPunUoK1/QSupf5mO57TgO2xlwI09R6VA+maUndLYgC+9S5X5hUsp5OWqdNHHyFFrk76xIe4MXVS6/OBNhrGqAw9l6GO+hks0kK0rWsJDkckQ+pfTxgXw0bRH2WdS2epBEM2xORQfAcj+yB1TnQ9C9At1N9mmF2xd0w6s28UN166S0fCf3e57ike/5RbCB8mrpHBrPSdkrWG5fCW07QUqSWCrHiaEVyRfnp5gqfKg2k6E9xD/CnBDwDS3EX6F92qZMDmBkKVxBBN9zhbXuSwhekHivI/wi5OnCh431szv9HNt0GhpUFzw=
+          secure: 08280c00-52b9-4619-ba31-096fe85137ba
         app: stdbank-production
         script: 'curl http://stdbank.herokuapp.com/vending/loadstock'
     - stage: GitHub Release
