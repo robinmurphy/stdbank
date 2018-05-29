@@ -24,7 +24,7 @@ jobs:
         provider: heroku
         skip_cleanup: true
         api_key:
-          secure: 08280c00-52b9-4619-ba31-096fe85137ba
+          secure: $HEROKU_TOKEN
         app: stdbank
         script:  'curl http://stdbank.herokuapp.com/vending/loadstock'
     - stage: deploy to production
@@ -32,7 +32,7 @@ jobs:
         provider: heroku
         skip_cleanup: true
         api_key:
-          secure: 08280c00-52b9-4619-ba31-096fe85137ba
+          secure: $HEROKU_TOKEN
         app: stdbank-production
         script: 'curl http://stdbank.herokuapp.com/vending/loadstock'
     - stage: GitHub Release
